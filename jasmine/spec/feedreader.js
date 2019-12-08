@@ -26,10 +26,10 @@ $(function() {
         * ensures it has a URL defined and that the URL is not empty.
         */
         it('loops through each feed and ensures it has a URL defined and not empty', function() {
-            for(var x = 0; x < allFeeds.length; x++) {
-                expect(allFeeds[x].url).toBeDefined();
-                expect(allFeeds[x].url.length).not.toEqual(0);
-            }
+            allFeeds.forEach(function(feed){
+                expect(feed.url).toBeDefined();
+                expect(feed.url.length).not.toEqual(0);
+            });
         });
        
 
@@ -65,7 +65,7 @@ $(function() {
     });
 
     /* This test suite is about Initial Entries */
-    var feedContainer = document.querySelector("div.feed");
+
     describe('Initial Entries', function() {
         /* This test ensures that when the loadFeed function is called and completes its work,
         * there is at least a single entry element within the feed container.*/
@@ -74,6 +74,7 @@ $(function() {
         });
           
         it('ensures there is at least a single entry element within the feed container', function() {
+            var feedContainer = document.querySelector(".entry");
             expect(feedContainer.childNodes.length).toBeGreaterThan(0);
         });
     });
