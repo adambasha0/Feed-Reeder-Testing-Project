@@ -74,7 +74,7 @@ $(function() {
         });
           
         it('ensures there is at least a single entry element within the feed container', function() {
-            var feedContainer = document.querySelector(".entry");
+            var feedContainer = document.querySelector(".feed .entry");
             expect(feedContainer.childNodes.length).toBeGreaterThan(0);
         });
     });
